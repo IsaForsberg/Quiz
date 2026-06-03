@@ -3,6 +3,10 @@
 
 import { QUIZ_CATALOG } from "./questions.js";
 
+function escapeHtml(str) {
+  return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
 // === App-state ===
 let selectedChapters = new Set();
 let questionsPool = [];
@@ -130,7 +134,7 @@ function renderQuestion() {
     .map((opt, idx) => `
       <label class="option-bubble" data-idx="${idx}">
         <input type="radio" name="answer" value="${idx}" />
-        <span class="bubble">${opt}</span>
+        <span class="bubble">${escapeHtml(opt)}</span>
       </label>
     `)
     .join("");
@@ -140,7 +144,7 @@ function renderQuestion() {
       <span class="chip">${q.chapter}</span>
       <span class="chip">#${currentIndex + 1}</span>
     </div>
-    <h2 class="q-text">${q.question}</h2>
+    <h2 class="q-text">${escapeHtml(q.question)}</h2>
     <div class="options-wrap">${optionsHtml}</div>
     <div class="feedback" id="feedback" aria-live="polite"></div>
   `;

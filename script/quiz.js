@@ -50,7 +50,8 @@ document.body.innerHTML = `
 
         <div class="run-actions">
           <button id="nextBtn" class="btn" disabled>Nästa</button>
-          <button id="finishBtn" class="btn warn" hidden>Avsluta</button>
+          <button id="finishBtn" class="btn warn">Visa resultat</button>
+          <button id="abortBtn" class="btn">Avbryt quiz</button>
         </div>
 
         <div id="status" class="status">
@@ -150,7 +151,6 @@ function renderQuestion() {
   });
 
   document.getElementById("nextBtn").disabled = true;
-  document.getElementById("finishBtn").hidden = currentIndex < questionsPool.length - 1;
   updateProgress();
 }
 
@@ -237,6 +237,11 @@ document.getElementById("clearAllBtn").addEventListener("click", () => {
 document.getElementById("startBtn").addEventListener("click", startQuiz);
 document.getElementById("nextBtn").addEventListener("click", nextQuestion);
 document.getElementById("finishBtn").addEventListener("click", finishQuiz);
+document.getElementById("abortBtn").addEventListener("click", () => {
+  document.getElementById("quizRun").hidden = true;
+  document.getElementById("quizSetup").hidden = false;
+  currentIndex = 0; score = 0; questionsPool = [];
+});
 
 document.getElementById("chaptersList").addEventListener("change", (e) => {
   const cb = e.target;

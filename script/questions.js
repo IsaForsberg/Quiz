@@ -2,7 +2,7 @@
 import { javascriptQuestions } from "./questions/javaScriptQuestions.js";
 import { domQuestions} from "./questions/domQuestions.js";
 import { restApiQuestions } from "./questions/restApiQuestions.js";
-import { htmlCssQuestions } from "./questions/html&cssQuestions.js";
+import { htmlCssQuestions } from "./questions/htmlCssQuestions.js";
 import { unitTestingEtcQuestions } from "./questions/unitTestingEtcQuestions.js";
 import { apiDevelopmentQuestions } from "./questions/apiDevelopmentQuestions.js";
 import { inputFormsQuestions } from "./questions/inputFormsQuestions.js";

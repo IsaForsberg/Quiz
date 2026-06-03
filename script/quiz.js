@@ -18,7 +18,7 @@ document.body.innerHTML = `
     </header>
 
     <main class="qa-main">
-      <section class="qa-setup">
+      <section class="qa-setup" id="quizSetup">
         <div class="setup-controls">
           <button id="selectAllBtn" class="btn primary">Välj alla kapitel</button>
           <button id="clearAllBtn" class="btn">Rensa val</button>
@@ -198,6 +198,7 @@ function startQuiz() {
   score = 0;
 
   // Visa körläge
+  document.getElementById("quizSetup").hidden = true;
   document.getElementById("quizRun").hidden = false;
   document.getElementById("quizResult").hidden = true;
 
@@ -247,6 +248,7 @@ document.getElementById("chaptersList").addEventListener("change", (e) => {
 
 document.getElementById("restartBtn").addEventListener("click", () => {
   // Till setup‑läge
+  document.getElementById("quizSetup").hidden = false;
   document.getElementById("quizResult").hidden = true;
   document.getElementById("quizRun").hidden = true;
   // Lämna val orörda så man kan köra igen

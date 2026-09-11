@@ -3,6 +3,8 @@
 A simple and interactive quiz built with HTML, CSS, and JavaScript.
 The project is designed to practice modular code structure, DOM manipulation, and user‑friendly design.
 
+https://isaforsberg.github.io/Quiz/
+
 Features
 📚 Question bank with multiple questions
 
